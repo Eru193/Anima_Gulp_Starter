@@ -2,9 +2,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//Wheel
 	const pointer = document.querySelector('.center_point');
-	const start = document.querySelector('#button_1');
+	const start = document.querySelector('#button_one');
+	const nextStep = document.querySelector('#button_two');
+	const modal_2 =	document.querySelector('#modal_2');
+	const modal_3 = document.querySelector('#modal_3'); 
 	
 	(function wheel (){
+
+		
+		let targets_image = [
+			'.watch_image',
+			'.card_image',
+			'.headphones_image',
+			'.smartphone_image',
+			'.repeat_image_1',
+			'.no_image'
+		]
+
 		let overlay = anime({
 			targets:'.overlay',
 			duration: 150,
@@ -19,11 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
 					delay: 2300,
 					opacity: 1,
 					duration: 150,
-					easing: 'easeInOutExpo'
+					easing: 'easeInOutExpo',
+					complete: function(){
+						anime({
+							targets: targets_image,
+							opacity: 1,
+							duration: 100,
+							easing: 'easeInOutExpo'
+						})
+					}
+					
 				})
 			}
 		})
-		let wheel_animation = anime({
+		let wheel_animation_1 = anime({
 			targets: '#modal_1',
 			duration: 150,
 			autoplay: false,
@@ -39,14 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
 					direction: 'normal',
 					easing: 'easeInOutQuad',
 					complete: function(){
-						let targets_image = [
-							'.watch_image',
-							'.card_image',
-							'.headphones_image',
-							'.smartphone_image',
-							'.repeat_image_1',
-							'.no_image'
-						]
 						anime({
 							targets: targets_image,
 							opacity: 0.3,
@@ -66,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
 										{translateY: 0},
 									],
 									begin: function(){
-										document.querySelector('#modal_2').style.display = 'block';
-									}
+										modal_2.style.display = 'flex';
+									},
 								})
 							}
 							
@@ -77,9 +92,95 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 
 		})
-		start.addEventListener('click',wheel_animation.restart);
+
+		start.addEventListener('click',wheel_animation_1.restart);
 		start.addEventListener('click',overlay.restart);
-		
+	
+		(function StepTwo(){
+
+			let overlay_2 = anime({
+				targets:'.overlay',
+				delay: 50,
+				duration: 150,
+				opacity: 0,
+				direction: 'normal',
+				autoplay: false,
+				easing: 'easeInOutQuad',
+				complete: function(){
+					anime({
+						targets: '.overlay',
+						delay: 2300,
+						opacity: 1,
+						duration: 150,
+						easing: 'easeInOutExpo',
+					})
+				}
+			});
+
+			let wheel_animation_2 = anime({
+				targets: '#modal_2',
+				duration: 150,
+				translateY: 64,
+				opacity: 0,
+				direction: 'normal',
+				easing: 'easeInOutQuad',
+				autoplay: false,
+				begin: function(){
+					modal_2.style.display = 'none';
+				},
+				complete: function(){
+					anime({
+						targets: '.divisions',
+						duration: 2000,
+						rotate: '6009deg',
+						easing: 'easeInOutExpo',
+						complete: function(){
+							let targets_image = [
+											'.watch_image',
+											'.headphones_image',
+											'.smartphone_image',
+											'.repeat_image',
+											'.no_image'
+										]
+							anime({
+								targets: targets_image,
+									duration: 150,
+									opacity: 0.3,
+									complete: function(){
+										anime({
+											targets: '#modal_3',
+											delay: 250,
+											opacity: 1,
+											duration: 150,
+											direction: 'normal',
+											easing: 'easeInOutExpo',
+											keyframes:[
+													{translateY: -324},
+													{translateY: 50},
+												],
+												begin: function(){
+																modal_3.style.display = 'flex';
+												},
+											complete: function(){
+												anime({
+
+												})
+											}		
+										})
+									}
+							})		
+						}
+					})
+				}
+			
+			
+			})
+
+			nextStep.addEventListener('click',overlay_2.restart);
+			nextStep.addEventListener('click',wheel_animation_2.restart);
+
+		})();
+
 	})();
 	
 	//Appendix
