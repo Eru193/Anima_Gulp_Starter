@@ -2,43 +2,84 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//Wheel
 	const pointer = document.querySelector('.center_point');
-
+	const start = document.querySelector('#button_1');
+	
 	(function wheel (){
-		let wheel_animation = anime({
-			targets: '.divisions',
-			duration: 2000,
-			rotate: '2990deg',
+		let overlay = anime({
+			targets:'.overlay',
+			duration: 150,
+			delay: 50,
+			opacity: 0,
 			direction: 'normal',
 			easing: 'easeInOutQuad',
 			autoplay: false,
 			complete: function(){
-				let targets_image = [
-					'.watch_image',
-					'.card_image',
-					'.headphones_image',
-					'.smartphone_image',
-					'.repeat_image_1',
-					'.no_image'
-				]
 				anime({
-					targets: targets_image,
-					opacity: 0.3,
-					duration: 100,
-					easing: 'easeInOutExpo',
-
+					targets: '.overlay',
+					delay: 2300,
+					opacity: 1,
+					duration: 150,
+					easing: 'easeInOutExpo'
 				})
 			}
 		})
+		let wheel_animation = anime({
+			targets: '#modal_1',
+			duration: 150,
+			autoplay: false,
+			direction: 'normal',
+			easing: 'easeInOutQuad',
+			translateY: 64,
+			opacity: 0,
+			complete: function(){
+				anime({
+					targets: '.divisions',
+					duration: 2000,
+					rotate: '2990deg',
+					direction: 'normal',
+					easing: 'easeInOutQuad',
+					complete: function(){
+						let targets_image = [
+							'.watch_image',
+							'.card_image',
+							'.headphones_image',
+							'.smartphone_image',
+							'.repeat_image_1',
+							'.no_image'
+						]
+						anime({
+							targets: targets_image,
+							opacity: 0.3,
+							duration: 100,
+							direction: 'normal',
+							easing: 'easeInOutExpo',
+							complete: function(){
+								anime({
+									targets: '#modal_2',
+									delay: 250,
+									opacity: 1,
+									duration: 150,
+									direction: 'normal',
+									easing: 'easeInOutExpo',
+									keyframes:[
+										{translateY: -324},
+										{translateY: 0},
+									],
+									begin: function(){
+										document.querySelector('#modal_2').style.display = 'block';
+									}
+								})
+							}
+							
+						})
+					}
+				})
+			}
 
-	pointer.addEventListener('click',wheel_animation.restart);
-	
-
-
-
-
-
-
-
+		})
+		start.addEventListener('click',wheel_animation.restart);
+		start.addEventListener('click',overlay.restart);
+		
 	})();
 	
 	//Appendix

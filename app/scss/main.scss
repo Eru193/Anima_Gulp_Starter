@@ -16,8 +16,9 @@ body {
 	position: relative;
 	line-height: 1.65;
 	font-family: $font;
-	margin: 16px 16px 0 16px;
 	overflow-x: hidden;
+	padding: 16px 16px 0 16px;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -65,6 +66,9 @@ b, strong {
 }
 
 //Head
+#logo{
+	padding-top: $normal;
+}
 h1.title {
 	color: #155AA9;
 	font-size: 18px;
@@ -185,24 +189,68 @@ h1.title {
 }
 
 //Modal
+.overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 150;
+	background-color: rgba(0,0,0,0.2);
+	left: 0;
+}
+
+.modal_section{
+	position: relative;
+	height: 1px;
+	z-index: 200;
+}
+#modal_2, #modal_3{
+	display: none;
+	opacity: 0;
+}
+#modal_2{
+	.modal_title{
+		margin-top: -10px;
+	}
+	.modal_p_1{
+		margin-top: -8px;
+		letter-spacing: normal;
+	}
+	.modal_button{
+		margin-top: 0;
+	}
+}
 .modal {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border: $normal;
-	border: 1px solid red;
 	padding: $normal;
+	font-size: $normal;
+	line-height: 1.55;
+	right: 1%;
+	position: absolute;
+	border-radius: 9px;
 	margin-bottom: $large;
+	letter-spacing: -0.5px;
+	background-color: #FFFFFF;
+	bottom: -40px;
 	.modal_icon{
 		height: 48px;
 		width: 48px;
-		border: 16px solid #888;
+		border: 16px solid #FFFFFF;
 		margin-top: -56px;
-		background-image: url(../img/_src/SmileHappy.svg);
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 50%;
 		box-sizing: content-box;
+	}
+	.modal_2_icon{
+		background-image: url(../img/_src/SmileWink.svg);
+	}
+	.modal_3_icon{
+		background-image: url(../img/_src/SmileHappy.svg);
 	}
 	.modal_title {
 		color: #155AA9;
@@ -211,7 +259,7 @@ h1.title {
 		margin-bottom: $normal;
 	}
 	.modal_p_1{
-		margin-bottom: $big;
+		margin-bottom: $normal;
 	}
 	.modal_button{
 		height: $big*2;
@@ -220,17 +268,17 @@ h1.title {
 		outline: none;
 		border: 0;
 		margin-top: $normal;
-		margin-bottom: $normal;
+		border-radius: 5px;
 		.btn_span{
 			color: #ffffff;
 			font-size: 18px;
 			font-weight: bold;
 		}
 	}
+	.modal_expire{
+		margin-top: $normal;
+	}
 }
-
-
-
 //Appendix
 span {
 	font-family: $font;
