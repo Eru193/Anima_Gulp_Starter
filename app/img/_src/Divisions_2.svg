@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="328" height="328" viewBox="0 0 328 328">
+  <defs>
+    <linearGradient id="divisions_2-b" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EBF2F9"/>
+    </linearGradient>
+    <path id="divisions_2-a" d="M145.597016,58.2643775 L143.821593,60.0112644 L250.320795,166.510204 L250.320795,15.8979592 C212.546574,15.8979592 174.772332,30.0200333 145.597016,58.2643775 Z"/>
+    <linearGradient id="divisions_2-d" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF2F9"/>
+      <stop offset="100%" stop-color="#C8D9EB"/>
+    </linearGradient>
+    <path id="divisions_2-c" d="M76.9848092,73.7639192 L75.2093866,75.5108061 L181.708588,182.009746 L181.708588,31.3975009 C143.934367,31.3975009 106.160126,45.519575 76.9848092,73.7639192 Z"/>
+    <path id="divisions_2-e" d="M205.073003,95.8207029 L203.297581,97.5675898 L309.796783,204.066529 L309.796783,53.4542846 C272.022561,53.4542846 234.24832,67.5763587 205.073003,95.8207029 Z"/>
+    <path id="divisions_2-f" d="M220.572545,164.432909 L218.797122,166.179796 L325.296324,272.678736 L325.296324,122.066491 C287.522103,122.066491 249.747861,136.188565 220.572545,164.432909 Z"/>
+    <path id="divisions_2-g" d="M183.01622,223.908897 L181.240797,225.655784 L287.739999,332.154724 L287.739999,181.542479 C249.965777,181.542479 212.191536,195.664553 183.01622,223.908897 Z"/>
+    <path id="divisions_2-h" d="M114.404013,239.408439 L112.628591,241.155326 L219.127792,347.654265 L219.127792,197.04202 C181.353571,197.04202 143.57933,211.164095 114.404013,239.408439 Z"/>
+    <path id="divisions_2-i" d="M54.9280255,201.852113 L53.152603,203.599 L159.651805,310.09794 L159.651805,159.485695 C121.877583,159.485695 84.103342,173.607769 54.9280255,201.852113 Z"/>
+    <path id="divisions_2-j" d="M39.4284837,133.239907 L37.6530612,134.986794 L144.152263,241.485733 L144.152263,90.8734885 C106.378042,90.8734885 68.6038002,104.995563 39.4284837,133.239907 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-17.571 -18.408)">
+    <g transform="rotate(45 197.071 91.204)">
+      <use fill="#EBF2F9" xlink:href="#divisions_2-a"/>
+      <use fill="url(#divisions_2-b)" xlink:href="#divisions_2-a"/>
+    </g>
+    <use fill="#C8D9EB" xlink:href="#divisions_2-c"/>
+    <use fill="url(#divisions_2-d)" xlink:href="#divisions_2-c"/>
+    <g transform="rotate(90 256.547 128.76)">
+      <use fill="#C8D9EB" xlink:href="#divisions_2-e"/>
+      <use fill="url(#divisions_2-d)" xlink:href="#divisions_2-e"/>
+    </g>
+    <g transform="rotate(135 272.047 197.373)">
+      <use fill="#EBF2F9" xlink:href="#divisions_2-f"/>
+      <use fill="url(#divisions_2-b)" xlink:href="#divisions_2-f"/>
+    </g>
+    <g transform="rotate(180 234.49 256.849)">
+      <use fill="#C8D9EB" xlink:href="#divisions_2-g"/>
+      <use fill="url(#divisions_2-d)" xlink:href="#divisions_2-g"/>
+    </g>
+    <g transform="rotate(-135 165.878 272.348)">
+      <use fill="#EBF2F9" xlink:href="#divisions_2-h"/>
+      <use fill="url(#divisions_2-b)" xlink:href="#divisions_2-h"/>
+    </g>
+    <g transform="rotate(-90 106.402 234.792)">
+      <use fill="#C8D9EB" xlink:href="#divisions_2-i"/>
+      <use fill="url(#divisions_2-d)" xlink:href="#divisions_2-i"/>
+    </g>
+    <g transform="rotate(-45 90.903 166.18)">
+      <use fill="#EBF2F9" xlink:href="#divisions_2-j"/>
+      <use fill="url(#divisions_2-b)" xlink:href="#divisions_2-j"/>
+    </g>
+  </g>
+</svg>

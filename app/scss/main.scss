@@ -1,0 +1,270 @@
+@import "vars";
+@import "libs";
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	color: #888888;
+}
+
+body {
+	font-size: 16px;
+	min-width: 360px;
+	min-height: 640px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $font;
+	margin: 16px 16px 0 16px;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+#head ,#body {
+	margin-bottom: $small;
+}
+.content-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+}
+.font-weight-bold {
+	font-weight: bold;
+}
+.text-center {
+	text-align: center;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+//Head
+h1.title {
+	color: #155AA9;
+	font-size: 18px;
+	margin-top: $small;
+	overflow: hidden;
+}
+.lead {
+	color:  #333333;
+	font-size: $normal;
+}
+
+//Body
+#body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wheel {
+	height: 328px;
+	width: 328px;
+	background-image: url(../img/_src/Back_2.svg);
+}
+.divisions{
+	height: 328px;
+	width: 328px;
+	background-image: url(../img/_src/Divisions_2.svg);
+}
+.point {
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	background-size: 85%;
+	background-position: center;
+}
+.point_wrapper {
+	position: relative;
+}
+.big_point {
+	height: 100px;
+	width: 100px;
+}
+.small_point {
+	height: 48px;
+	width: 48px;
+}
+.point_line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 295px;
+	position: absolute;
+}
+.no_image_line {
+	transform: rotate(68deg);
+}
+.rep_image_line {
+	transform: rotate(157deg);
+}
+.phone_pods_line {
+	transform: rotate(293deg);
+}
+.card_watch_line {
+	transform: rotate(23deg);
+}
+.repeat_image {
+	background-image: url(../img/_src/Rotate.svg);
+	background-size: auto;
+}
+.headphones_image{
+	background-image: url(../img/_src/Pods.png);
+	transform: rotate(275deg);
+}
+.smartphone_image{
+	background-image: url(../img/_src/Phone.png);
+	transform: rotate(91deg);
+}
+.no_image {
+	background-image: url(../img/_src/SmileSad.svg);
+}
+.card_image{
+	background-image: url(../img/_src/Card.png);
+	transform: rotate(93deg);
+}
+.watch_image{
+	background-image: url(../img/_src/Watch.png);
+	transform: rotate(270deg);
+}
+.no_image_1{
+	transform: rotate(270deg);
+}
+.no_image_2{
+	transform: rotate(88deg);
+}
+.repeat_image_1{
+	transform: rotate(270deg);
+}
+.repeat_image_2{
+	transform: rotate(88deg);
+}
+.center_point{
+	height: 328px;
+	width: 328px;
+	background-image: url(../img/_src/Center_2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+	position: absolute;
+	z-index: 100;
+}
+.for_center_point{
+	height: 1px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 164px;
+	margin-bottom: 164px;
+}
+
+//Modal
+.modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: $normal;
+	border: 1px solid red;
+	padding: $normal;
+	margin-bottom: $large;
+	.modal_icon{
+		height: 48px;
+		width: 48px;
+		border: 16px solid #888;
+		margin-top: -56px;
+		background-image: url(../img/_src/SmileHappy.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		box-sizing: content-box;
+	}
+	.modal_title {
+		color: #155AA9;
+		font-size: 18px;
+		margin-top: $small;
+		margin-bottom: $normal;
+	}
+	.modal_p_1{
+		margin-bottom: $big;
+	}
+	.modal_button{
+		height: $big*2;
+		width: 100%;
+		background-color: #155AA9;
+		outline: none;
+		border: 0;
+		margin-top: $normal;
+		margin-bottom: $normal;
+		.btn_span{
+			color: #ffffff;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+}
+
+
+
+//Appendix
+span {
+	font-family: $font;
+	color: $text;
+	overflow: hidden;
+}
+p {
+	margin-bottom: 0;
+}
+.comment_p {
+	font-size: 14px;
+}
+.comment_name {
+	font-size: 14px;
+}
+.color-blue {
+	color: #3b5898;
+}
+.color-grey {
+	color: #9E9E9E;
+}
+.row_comment {
+	background-color: #f3f3f3;
+	margin-top: 4px;
+	padding: 10px;
+}
+.small-span {
+	font-size: 13px;
+}
+.span_14px {
+	font-size: 14px;
+}
+
+
+
+
+@import "media"; // Always at the end
