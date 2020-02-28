@@ -159,11 +159,38 @@ document.addEventListener("DOMContentLoaded", function() {
 													{translateY: 50},
 												],
 												begin: function(){
-																modal_3.style.display = 'flex';
+													modal_3.style.display = 'flex';
 												},
+
+												
 											complete: function(){
 												anime({
+													targets:'.expire',
+													easing: 'lenear',
+													duration: 10000,
+													begin: function startExpire(){//Expire		
+														countdown = new Date(),
+														responseTime = new Date(Date.now() + (1000*10)); 
 
+														(function startTime() {
+															let expire = document.querySelector('.expire');	
+															countdown.setTime(responseTime - Date.now());
+															expire.innerHTML = countdown.getSeconds() + ':' + countdown.getMilliseconds();
+														if(countdown.getMilliseconds() > 0 || countdown.getSeconds() > 0)
+															requestAnimationFrame(startTime);
+														})();
+														},
+													complete: function(){
+														
+															modal_3.style.display = 'none';
+															
+														anime({
+															delay: 2000,
+															begin: function(){
+																alert('Потрачено');
+															}
+														})	
+													}
 												})
 											}		
 										})
@@ -182,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		})();
 
 	})();
+	
 	
 	//Appendix
 	(function Appendix () {
