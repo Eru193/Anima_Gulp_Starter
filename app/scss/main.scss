@@ -1,14 +1,12 @@
 @import "vars";
 @import "libs";
 
-::placeholder {
-	color: #666;
-}
-
 ::selection {
 	color: #888888;
 }
-
+*{
+	box-sizing: border-box;
+}
 body {
 	font-size: 16px;
 	min-width: 360px;
@@ -18,20 +16,10 @@ body {
 	font-family: $font;
 	overflow-x: hidden;
 	padding: 16px 16px 0 16px;
-	margin: 0;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	input, textarea {
-		border: #666 1px solid;
-		outline: none;
-		&:focus:required:invalid {
-			border-color: red;
-		}
-		&:required:valid {
-			border-color: green;
-		}
-	}
 }
 #head ,#body {
 	margin-bottom: $small;
@@ -46,23 +34,11 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
-.img-responsive {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	&.img-width {
-		width: 100%;
-	}
-}
 .font-weight-bold {
 	font-weight: bold;
 }
 .text-center {
 	text-align: center;
-}
-
-b, strong {
-	font-weight: bold;
 }
 
 //Head
@@ -130,7 +106,7 @@ h1.title {
 	transform: rotate(293deg);
 }
 .card_watch_line {
-	transform: rotate(23deg);
+	transform: rotate(22.4deg);
 }
 .repeat_image {
 	background-image: url(../img/_src/Rotate.svg);
@@ -149,7 +125,7 @@ h1.title {
 }
 .card_image{
 	background-image: url(../img/_src/Card.png);
-	transform: rotate(93deg);
+	transform: rotate(90deg);
 }
 .watch_image{
 	background-image: url(../img/_src/Watch.png);
@@ -204,20 +180,42 @@ h1.title {
 	height: 1px;
 	z-index: 200;
 }
-#modal_2, #modal_3{
+#modal_3, #modal_2{
 	display: none;
 	opacity: 0;
 }
-#modal_3{
+.back_modal_3{
+	height: 32px;
+	width: 92%;
+	border-radius: 5px;
+	background-color: #31a81e;
+	position: absolute;
+	right: 4%;
+	top: 33px;
+	.jump_card{
+		height: 200px;
+		width: 200px;
+		background: url(../img/_src/JumpCard.png) no-repeat center;
+	}
+}
+#modal_1{
+	top: 54px;
+}
+#modal_3_content{
+	top: 50px;
 	.modal_title{
 		margin-top: -10px;
 		color: #31a81e;
+	}
+	.expire{
+		color: red;
 	}
 	.modal_button{
 		background-color: #31a81e;
 	}
 }
 #modal_2{
+	top: 172px;
 	.modal_title{
 		margin-top: -10px;
 	}
@@ -229,7 +227,13 @@ h1.title {
 		margin-top: 0;
 	}
 }
+#modal_1, #modal_2 {
+	right: 0.15%;
+}
 .modal {
+	background: #FFFFFF;
+	box-shadow: 0 8px 40px 0 rgba(0,0,0,0.50);
+	border-radius: 4px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -238,13 +242,10 @@ h1.title {
 	padding: $normal;
 	font-size: $normal;
 	line-height: 1.55;
-	right: 1%;
 	position: absolute;
-	border-radius: 9px;
 	margin-bottom: $large;
 	letter-spacing: -0.5px;
 	background-color: #FFFFFF;
-	bottom: -40px;
 	.modal_icon{
 		height: 48px;
 		width: 48px;
@@ -286,6 +287,15 @@ h1.title {
 	}
 	.modal_expire{
 		margin-top: $normal;
+		display: inline-block;
+		.expire-span{
+			display: inline-block;
+		}
+		.expire{
+			display: inline-block;
+			width: 39px;
+			padding-left: 10px;
+		}
 	}
 }
 //Appendix
@@ -313,12 +323,30 @@ p {
 	background-color: #f3f3f3;
 	margin-top: 4px;
 	padding: 10px;
+	display: flex;
+	flex-flow: row nowrap;
 }
 .small-span {
 	font-size: 13px;
 }
 .span_14px {
 	font-size: 14px;
+}
+.comments_count{
+	padding-right: 8px;
+}
+.avatar{
+	height: 40px;
+	width: 40px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+.like_images{
+	display: inline-block;	
 }
 
 

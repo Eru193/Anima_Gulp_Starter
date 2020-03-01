@@ -8,7 +8,7 @@
 	<title>Wheel</title>
 	<meta name="description" content="">
 
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width user-scalable=no">
 
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="">
@@ -52,48 +52,6 @@
 		</div>
 	</header>
 
-
-	<!--Body_Section-->
-	<section id="body">
-
-		<div class="for_center_point">
-			
-			<div class="center_point"></div>
-			<div class="wheel">
-
-				<div class="divisions content-center">
-					<div class="point_wrapper content-center">
-
-						<div class="point_line no_image_line">
-							<div class="point small_point no_image no_image_1"></div>
-							<div class="point small_point no_image no_image_2"></div>
-						</div>
-
-						<div class="point_line card_watch_line">
-							<div class="point big_point watch_image"></div>
-							<div class="point big_point card_image"></div>
-						</div>
-
-						<div class="point_line rep_image_line">
-							<div class="point small_point repeat_image repeat_image_1"></div>
-							<div class="point small_point repeat_image repeat_image_2"></div>
-						</div>
-
-						<div class="point_line phone_pods_line">
-							<div class="point big_point headphones_image"></div>
-							<div class="point big_point smartphone_image"></div>
-						</div>
-
-					</div>
-					
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-	
 	<!--Section_modal_window-->
 	<section class="modal_section">
 
@@ -106,7 +64,7 @@
 							Congratulations!
 						</h1>
 						<p class="modal_p_1">
-							YOU have been a selected by Bank of America<br>
+							YOU have been a selected by Bank of America
 							for a shot at&nbsp;
 							<span class="font-weight-bold">
 								 $1,000 Gift Card
@@ -157,40 +115,88 @@
 			<div class="row content-center">
 				<div class="col-lg-4 text-center">
 
-					<div class="modal" id="modal_3">
-						<div class="modal_icon modal_3_icon"></div>
-						<h1 class="modal_title">
-							Congratulations!
-						</h1>
-						<p class="modal_p_1">
-							<span class="modal_span font-weight-bold">
-								$1000 Bank of America Gift Card
-							</span>
-							<br>
-							<span class="modal_span">
-								is reserved for you!
-							</span>
-						</p>
-						<p class="modal_p_2">
-							To claim your prize, click the button<br>
-bellow and verify your information on the
-next page.
-						</p>
-						<button class="modal_button" type="button" id="submit_button">
-							<span class="btn_span text-center">
-								Claim Your Prize
-							</span>
-						</button>
-						<div class="modal_expire">
-							<span>
-								Your prize will expire in <span class="expire">00:00</span>
-							</span>
+					<div id="modal_3">
+						<div class="back_modal_3 content-center">
+							<div class="jump_card"></div>
 						</div>
-					</div>
+						<div class="modal" id="modal_3_content">
+							<div class="modal_icon modal_3_icon"></div>
+							<h1 class="modal_title">
+								Congratulations!
+							</h1>
+							<p class="modal_p_1">
+								<span class="modal_span font-weight-bold">
+									$1000 Bank of America Gift Card
+								</span>
+								<br>
+								<span class="modal_span">
+									is reserved for you!
+								</span>
+							</p>
+							<p class="modal_p_2">
+								To claim your prize, click the button<br>
+	bellow and verify your information on the
+	next page.
+							</p>
+							<button class="modal_button" type="button" id="submit_button">
+								<span class="btn_span text-center">
+									Claim Your Prize
+								</span>
+							</button>
+							<div class="modal_expire">
+								<span class="expire-span">
+									Your prize will expire in</span><span class="expire">00:00</span>
+								
+							</div>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!--Body_Section-->
+	<section id="body">
+
+		<div class="for_center_point">
+			
+			<div class="center_point"></div>
+			<div class="wheel">
+
+				<div class="divisions content-center">
+					<div class="point_wrapper content-center">
+
+						<div class="point_line no_image_line">
+							<div class="point small_point no_image no_image_1"></div>
+							<div class="point small_point no_image no_image_2"></div>
+						</div>
+
+						<div class="point_line card_watch_line">
+							<div class="point big_point watch_image"></div>
+							<div class="point big_point card_image"></div>
+						</div>
+
+						<div class="point_line rep_image_line">
+							<div class="point small_point repeat_image repeat_image_1"></div>
+							<div class="point small_point repeat_image repeat_image_2"></div>
+						</div>
+
+						<div class="point_line phone_pods_line">
+							<div class="point big_point headphones_image"></div>
+							<div class="point big_point smartphone_image"></div>
+						</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+	
+	
 
 
 	<!--Appendix-->
@@ -198,8 +204,8 @@ next page.
 		<div class="container">
 			<div class="row row_comment">
 				<div class="col-lg-4">
-					<i></i>
-					<span class="color-blue">
+					<img src="./img/_src/Like.png" class="like_images" alt="">
+					<span class="color-blue" id="like_counter">
 						18,067
 					</span>
 					<span class="color-grey small-span">
@@ -208,65 +214,95 @@ next page.
 				</div>
 			</div>
 			<div class="row content-between row_comment">
-				<div class="col-lg-2">
+				<div class="col-lg-10">
 					<p class="color-blue span_14px">
 						View Comments
 					</p>
 				</div>
-					<span class="color-grey span_14px">
+				<!-- <div class="col-lg-2"> -->
+					<span class="color-grey span_14px comments_count" id="comments_counter">
 						73,312
 					</span>	
+				<!-- </div>	 -->
 			</div>
 			<div class="row content-center row_comment">
-				<div class="col-lg-10">
+					<div class="col-lg-1 col-2 content-center">
+						<div class="avatar"></div>
+					</div>
+					<div class="col-lg-11 col-10">
 					<p class="color-blue font-weight-bold">
-						<a class="color-blue comment_name" id="a1" href=""></a>
+						<a class="color-blue comment_name" id="a1" href="">
+							Victoria Johnson
+						</a>
 					</p>
-					<p class="comment_p" id="p1"></p>
-					<i></i>
-					<span class="color-blue small-span">Like</span>
+					<p class="comment_p" id="p1">
+						I had never won anything, but today I was lucky! Thank you!
+					</p>
+					<img src="./img/_src/Like.png" class="like_images like_image_1" alt="">
+					<span class="color-blue small-span like_1">Like</span>
 					<span class="color-blue small-span">. Reply</span>
 					<span class="color-blue small-span">
-						. <span class="color-blue small-span" id="num_1"></span> minutes ago</span>
+						. <span class="color-blue small-span" id="num_1"></span></span>
 				</div>
 			</div>
 			<div class="row content-center row_comment">
-				<div class="col-lg-10">
+					<div class="col-lg-1 col-2 content-center">
+						<div class="avatar"></div>
+					</div>
+					<div class="col-lg-11 col-10">
 					<p class="color-blue font-weight-bold">
-						<a class="color-blue comment_name" id="a2" href=""></a>
+						<a class="color-blue comment_name" id="a2" href="">
+							Phil Graham
+						</a>
 					</p>
-					<p class="comment_p" id="p2"></p>
-					<i></i>
-					<span class="color-blue small-span">Like</span>
+					<p class="comment_p" id="p2">
+						At first I thought this was just a joke, but the gift card arrived by the mail this morning
+					</p>
+					<img src="./img/_src/Like.png" class="like_images like_image_2" alt="">
+					<span class="color-blue small-span like_2">Like</span>
 					<span class="color-blue small-span">. Reply</span>
 					<span class="color-blue small-span">
-						. <span class="color-blue small-span" id="num_2"></span> minutes ago</span>
+						. <span class="color-blue small-span" id="num_2"></span></span>
 				</div>	
 			</div>
 			<div class="row content-center row_comment">
-				<div class="col-lg-10">
+				<div class="col-lg-1 col-2 content-center">
+					<div class="avatar"></div>
+				</div>
+				<div class="col-lg-11 col-10">
 					<p class="color-blue font-weight-bold">
-						<a class="color-blue comment_name" id="a3" href=""></a>
+						<a class="color-blue comment_name" id="a3" href="">
+							Mike Hines
+						</a>
 					</p>
-					<p class="comment_p" id="p3"></p>
-					<i></i>
-					<span class="color-blue small-span">Like</span>
+					<p class="comment_p" id="p3">
+						Initially I was not sure if this is real or not, but I have received my gift card today, thank you!!
+					</p>
+					<img src="./img/_src/Like.png" class="like_images like_image_3" alt="">
+					<span class="color-blue small-span like_3">Like</span>
 					<span class="color-blue small-span">. Reply</span>
 					<span class="color-blue small-span">
-						. <span class="color-blue small-span" id="num_3"></span> minutes ago</span>
+						. <span class="color-blue small-span" id="num_3"></span></span>
 				</div>	
 			</div>
 			<div class="row content-center row_comment">
-				<div class="col-lg-10">
+					<div class="col-lg-1 col-2 content-center">
+						<div class="avatar"></div>
+					</div>
+					<div class="col-lg-11 col-10">
 					<p class="color-blue font-weight-bold">
-						<a class="color-blue comment_name" id="a4" href=""></a>
+						<a class="color-blue comment_name" id="a4" href="">
+							Sandra Moore
+						</a>
 					</p>
-					<p class="comment_p" id="p4"></p>
-					<i></i>
-					<span class="color-blue small-span">Like</span>
+					<p class="comment_p" id="p4">
+						Sweeeet! I've won an iPhone!! My gosh!
+					</p>
+					<img src="./img/_src/Like.png" class="like_images like_image_4" alt="">
+					<span class="color-blue small-span like_4">Like</span>
 					<span class="color-blue small-span">. Reply</span>
 					<span class="color-blue small-span">
-						. <span class="color-blue small-span" id="num_4"></span> minutes ago</span>
+						. <span class="color-blue small-span" id="num_4"></span></span>
 				</div>	
 			</div>
 			
