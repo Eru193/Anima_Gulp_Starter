@@ -293,7 +293,7 @@ h1.title {
 		}
 		.expire{
 			display: inline-block;
-			width: 39px;
+			width: 31px;
 			padding-left: 10px;
 		}
 	}
@@ -339,12 +339,29 @@ p {
 .avatar{
 	height: 40px;
 	width: 40px;
-	background-size: contain;
-	background-position: center;
+	background-size: 600%;
+	// background-position-x: -40px;
 	background-repeat: no-repeat;
 	border-radius: 50%;
-	border: 1px solid black;
 	margin-bottom: 20px;
+}
+.bg_x-0{
+	background-position-x: left;
+}
+.bg_x_40{
+	background-position-x: -40px;
+}
+.bg_x_80{
+	background-position-x: -80px;
+}
+.bg_x_120{
+	background-position-x: -120px;
+}
+.bg_x_160{
+	background-position-x: -160px;
+}
+.bg_x_200{
+	background-position-x: -200px;
 }
 .like_images{
 	display: inline-block;	

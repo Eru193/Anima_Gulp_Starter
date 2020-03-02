@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	//Config
 	const CONFIG = {
 		lead_text: 'Every Tuesday we select 7 lucky people to receive a $1,000 Bank of America Gift Card. Spin the wheel to claim your special prize.',
-		//Modal_1
 	}
 	
 	//Visible 
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	// off(modal_expire);
 	// off(card_img);
 					
-
 	
 	(function wheel (){
 		
@@ -340,21 +338,40 @@ document.addEventListener("DOMContentLoaded", function() {
 		})();
 		
 		//Gender
-		// (function gender(){
+		let gender = function(){
+			const male = document.querySelectorAll('.male'),
+				  female = document.querySelectorAll('.female');
+			let faces = "url('../img/_src/Faces.png')";
+			let bg_x = [
+				'bg_x_0',
+				'bg_x_40',
+				'bg_x_80',
+				'bg_x_120',
+				'bg_x_160',
+				'bg_x_200',
+				];
+			// function shuffleArray(array) {
+			// 	for (var i = array.length - 1; i > 0; i--) {
+			// 		var j = Math.floor(Math.random() * (i + 1));
+			// 		var temp = array[i];
+			// 		array[i] = array[j];
+			// 		array[j] = temp;
+			// 	}
+			// }	
+			// shuffleArray(bg_x);
 			
-		// 	const avatar = document.getElementsByClassName('avatar');	
-		// 	console.log(avatar);
-		// 	avatar.forEach(function(a){
-		// 		console.log(a);
-		// 	});
-		// 	function male(){
-				
-		// 	};
-		// 	function female(){
-
-		// 	};
-		// 	let array = [male(),female()];
-		// })();
+			male.forEach((i) => {			
+				i.style.backgroundImage = faces;
+				i.style.backgroundPositionY = 'top';
+				i.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
+			})	
+			female.forEach((i) => {			
+				i.style.backgroundImage = faces;
+				i.style.backgroundPositionY = 'bottom';
+				i.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
+			})	
+		}
+		gender();
 
 		//Like&Comments_counter
 		function like_counter (min, max){
