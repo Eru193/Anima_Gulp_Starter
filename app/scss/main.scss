@@ -171,7 +171,7 @@ h1.title {
 	height: 100%;
 	top: 0;
 	z-index: 150;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.5);
 	left: 0;
 }
 
@@ -309,6 +309,7 @@ p {
 }
 .comment_p {
 	font-size: 14px;
+	color: #333333;
 }
 .comment_name {
 	font-size: 14px;
@@ -317,10 +318,10 @@ p {
 	color: #3b5898;
 }
 .color-grey {
-	color: #9E9E9E;
+	color: #616770;
 }
 .row_comment {
-	background-color: #f3f3f3;
+	background-color: #EEEFF4;
 	margin-top: 4px;
 	padding: 10px;
 	display: flex;
@@ -347,6 +348,9 @@ p {
 }
 .like_images{
 	display: inline-block;	
+}
+#like_counter{
+	font-size: 13px;
 }
 
 

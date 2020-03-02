@@ -2,6 +2,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	'use strict';
 
+	//Head_api
+	(function head_api(){
+		const lead = document.querySelector('.lead');
+		function content_lead (a){
+			lead.innerHTML = a;
+		}
+		//content_lead('Text'); //Uncomment for change
+	})()
+
+	//Visible 
+	function off (a){
+		a.style.display = 'none';
+	}
+
+	//....\/....Uncomment for off element
+	//off(appendix);
+	//off(logo);
+
 	//Wheel
 	const start = document.querySelector('#button_one');
 	const nextStep = document.querySelector('#button_two');
@@ -10,6 +28,24 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	(function wheel (){
 
+		const API = {
+			//*
+			appears_easing:	'easeInSine',	
+			disappears_easing: 'easeOutSine',	
+			//Modal
+			modal_appears_duration: 150,
+			modal_disappears_duration: 150,
+			//Setting timer duration && timer seconds for change timer
+			timerSeconds: 10,
+			timerDuration: 10000,
+			//Wheel Animation
+			wheel_1_duration: 2000,
+			wheel_2_duration: 2000,
+			wheel_1_rotate: '2990deg',
+			wheel_2_rotate: '6009deg',
+			wheel_1_easing: 'easeInOutQuad',
+			wheel_2_easing: 'easeInOutQuad',
+		};
 		
 		let targets_image = [
 			'.watch_image',
@@ -22,68 +58,64 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		let overlay = anime({
 			targets:'.overlay',
-			duration: 150,
+			duration: API.modal_disappears_duration,
 			delay: 50,
 			opacity: 0,
 			direction: 'normal',
-			easing: 'easeInOutQuad',
+			easing: API.disappears_easing,
 			autoplay: false,
 			complete: function(){
 				anime({
 					targets: '.overlay',
-					delay: 2300,
+					delay: API.wheel_1_duration+300,
 					opacity: 1,
-					duration: 150,
-					easing: 'easeInOutExpo',
-					complete: function(){
-						anime({
-							targets: targets_image,
-							opacity: 1,
-							duration: 100,
-							easing: 'easeInOutExpo'
-						})
-					}
-					
+					duration: API.modal_appears_duration,
+					easing: API.appears_easing,
+									
 				})
 			}
 		})
 		let wheel_animation_1 = anime({
 			targets: '#modal_1',
-			duration: 150,
+			duration: API.modal_disappears_duration,
 			autoplay: false,
 			direction: 'normal',
-			easing: 'easeInOutQuad',
+			easing: API.disappears_easing,
 			translateY: 64,
 			opacity: 0,
 			complete: function(){
 				anime({
 					targets: '.divisions',
-					duration: 2000,
-					rotate: '2990deg',
+					duration: API.wheel_1_duration,
+					rotate: API.wheel_1_rotate,
 					direction: 'normal',
-					easing: 'easeInOutQuad',
+					easing: API.wheel_1_easing,
 					complete: function(){
 						anime({
 							targets: targets_image,
 							opacity: 0.3,
 							duration: 100,
 							direction: 'normal',
-							easing: 'easeOutExpo',
+							easing: API.disappears_easing,
 							complete: function(){
 								anime({
 									targets: '#modal_2',
-									delay: 250,
-									opacity: 1,
-									duration: 150,
-									direction: 'normal',
-									easing: 'easeInOutExpo',
-									keyframes:[
-										{translateY: -324},
-										{translateY: 0},
-									],
-									begin: function(){
-										modal_2.style.display = 'flex';
-									},
+									duration: 0,
+									translateY: -324,
+									complete: function(){
+										anime({
+											targets: '#modal_2',
+											delay: 250,
+											opacity: 1,
+											duration: API.modal_appears_duration,
+											direction: 'normal',
+											easing: API.appears_easing,
+											translateY: 0,
+											begin: function(){
+												modal_2.style.display = 'flex';
+											},
+										})
+									}
 								})
 							}
 							
@@ -102,18 +134,26 @@ document.addEventListener("DOMContentLoaded", function() {
 			let overlay_2 = anime({
 				targets:'.overlay',
 				delay: 50,
-				duration: 150,
+				duration: API.modal_disappears_duration,
 				opacity: 0,
 				direction: 'normal',
 				autoplay: false,
-				easing: 'easeInQuad',
+				easing: API.disappears_easing,
+				begin: function(){
+					anime({
+						targets: targets_image,
+						opacity: 1,
+						duration: 100,
+						easing: API.appears_easing
+					})
+				},
 				complete: function(){
 					anime({
 						targets: '.overlay',
-						delay: 2300,
+						delay: API.wheel_2_duration+300,
 						opacity: 1,
-						duration: 150,
-						easing: 'easeInOutExpo',
+						duration: API.modal_appears_duration,
+						easing: API.appears_easing,
 						complete: function(){
 							anime({
 								targets: '.jump_card',
@@ -129,21 +169,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			let wheel_animation_2 = anime({
 				targets: '#modal_2',
-				duration: 150,
+				duration: API.modal_disappears_duration,
+				autoplay: false,
+				direction: 'normal',
+				easing: API.disappears_easing,
 				translateY: 64,
 				opacity: 0,
-				direction: 'normal',
-				easing: 'easeInQuad',
-				autoplay: false,
 				begin: function(){
 					modal_2.style.display = 'none';
 				},
 				complete: function(){
 					anime({
 						targets: '.divisions',
-						duration: 2000,
-						rotate: '6009deg',
-						easing: 'easeInOutExpo',
+						duration: API.wheel_2_duration,
+						rotate: API.wheel_2_rotate,
+						easing: API.wheel_2_easing,
 						complete: function(){
 							let targets_image = [
 											'.watch_image',
@@ -156,57 +196,61 @@ document.addEventListener("DOMContentLoaded", function() {
 								targets: targets_image,
 									duration: 150,
 									opacity: 0.3,
-									easing: 'easeOutExpo',
+									easing: API.disappears_easing,
 									complete: function(){
 										anime({
 											targets: '#modal_3',
-											delay: 250,
-											opacity: 1,
-											duration: 150,
-											direction: 'normal',
-											easing: 'easeInOutExpo',
-											keyframes:[
-													{translateY: -324},
-													{translateY: 50},
-												],
-												begin: function(){
-													modal_3.style.display = 'flex';
-												},
-
-												
+											duration: 0,
+											translateY: -324,
 											complete: function(){
 												anime({
-													targets:'.expire',
-													easing: 'lenear',
-													duration: 10000,
-													begin: function startExpire(){//Expire		
-														let countdown = new Date();
-														let responseTime = new Date(Date.now() + (1000*10)); 
-
-														(function startTime() {
-															let expire = document.querySelector('.expire');	
-															countdown.setTime(responseTime - Date.now());
-															expire.innerHTML = countdown.getSeconds() + ':' + countdown.getMilliseconds();
-														if(countdown.getMilliseconds() > 0 || countdown.getSeconds() > 0)
-															requestAnimationFrame(startTime);
-														})();
+													targets: '#modal_3',
+													delay: 250,
+													opacity: 1,
+													duration: API.modal_appears_duration,
+													direction: 'normal',
+													easing: API.disappears_easing,
+													translateY: 0,
+														begin: function(){
+															modal_3.style.display = 'flex';
 														},
-													complete: function(){
+		
 														
-															modal_3.style.display = 'none';
-															
+													complete: function(){
 														anime({
-															targets:'.overlay',
-															opacity: 0,
-															duration: 100,
-															delay: 500,
-															begin: function(){
-																alert('Переход по ссылке!');
+															targets:'.expire',
+															easing: 'lenear',
+															duration: API.timerDuration,
+															begin: function startExpire(){//Expire		
+																let countdown = new Date();
+																let responseTime = new Date(Date.now() + (1000*API.timerSeconds)); 
+		
+																(function startTime() {
+																	let expire = document.querySelector('.expire');	
+																	countdown.setTime(responseTime - Date.now());
+																	expire.innerHTML = countdown.getSeconds() + ':' + countdown.getMilliseconds();
+																if(countdown.getMilliseconds() > 0 || countdown.getSeconds() > 0)
+																	requestAnimationFrame(startTime);
+																})();
+																},
+															complete: function(){
+																
+																	modal_3.style.display = 'none';
+																	
+																anime({
+																	targets:'.overlay',
+																	opacity: 0,
+																	duration: 100,
+																	delay: 500,
+																	begin: function(){
+																		alert('Переход по ссылке!');
+																	}
+																})	
 															}
-														})	
-													}
+														})
+													}		
 												})
-											}		
+											}
 										})
 									}
 							})		
@@ -255,23 +299,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		      num_3 = document.querySelector("#num_3"),
 		      num_4 = document.querySelector("#num_4");
 
-		//Visible 
-		function off (a){
-			a.style.display = 'none';
-		}
 
 		//Like&love
-		// (function random_like (){
-		// 	let likeLoveImages = [
-		// 		'../img/_src/Love.png',
-		// 		'../img/_src/Like.png'
-		// 	]
-		// 	like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+		(function random_like (){
+			let likeLoveImages = [
+				'../img/_src/Love.png',
+				'../img/_src/Like.png'
+			]
+			like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+			like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+			like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+			like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
 			
-		// })();
+		})();
 		
 
 		//Like&Comments_counter
@@ -322,14 +362,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		      Time_4 = function (a){
 			num_4.append(a);
 		};   
-
-
-		//....\/....Uncomment for off element
-		//off(appendix);
-		//off(logo);
-
-		
-		
+	
 		
 		//First block 
 		content_1a("Victoria Johnson");  // name
