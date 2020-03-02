@@ -2,15 +2,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	'use strict';
 
-	//Head_api
-	(function head_api(){
-		const lead = document.querySelector('.lead');
-		function content_lead (a){
-			lead.innerHTML = a;
-		}
-		//content_lead('Text'); //Uncomment for change
-	})()
+	const appendix = document.querySelector('#appendix'),
+		  logo = document.querySelector('#logo');
 
+	const card_img = document.querySelector('.jump_card'),
+		  modal_3_icon = document.querySelector('.modal_3_icon'),
+		  modal_2_icon = document.querySelector('.modal_2_icon'),
+		  sub_modal = document.querySelector('.back_modal_3'),
+		  modal_1_title = document.querySelector('.modal_1_title'),
+		  modal_3_title = document.querySelector('.modal_3_title'),
+		  modal_3_lead = document.querySelector('.modal_3_lead'),
+		  modal_1_lead = document.querySelector('.modal_1_lead'),  
+		  modal_expire = document.querySelector('.modal_expire');
+
+	//Config
+	const CONFIG = {
+		lead_text: 'Every Tuesday we select 7 lucky people to receive a $1,000 Bank of America Gift Card. Spin the wheel to claim your special prize.',
+		//Modal_1
+	}
+	
 	//Visible 
 	function off (a){
 		a.style.display = 'none';
@@ -19,15 +29,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	//....\/....Uncomment for off element
 	//off(appendix);
 	//off(logo);
+					//Modal
+	// off(modal_2_icon);
+	// off(modal_3_icon);
+	// off(sub_modal);
+	// off(modal_1_title);
+	// off(modal_3_title);
+	// off(modal_1_lead);
+	// off(modal_3_lead);
+	// off(modal_expire);
+	// off(card_img);
+					
 
-	//Wheel
-	const start = document.querySelector('#button_one');
-	const nextStep = document.querySelector('#button_two');
-	const modal_2 =	document.querySelector('#modal_2');
-	const modal_3 = document.querySelector('#modal_3'); 
 	
 	(function wheel (){
-
+		
 		const API = {
 			//*
 			appears_easing:	'easeInSine',	
@@ -47,6 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			wheel_2_easing: 'easeInOutQuad',
 		};
 		
+		const start = document.querySelector('#button_one');
+		const nextStep = document.querySelector('#button_two');
+		const modal_2 =	document.querySelector('#modal_2');
+		const modal_3 = document.querySelector('#modal_3'); 
+			
 		let targets_image = [
 			'.watch_image',
 			'.card_image',
@@ -242,9 +263,9 @@ document.addEventListener("DOMContentLoaded", function() {
 																	opacity: 0,
 																	duration: 100,
 																	delay: 500,
-																	begin: function(){
-																		alert('Переход по ссылке!');
-																	}
+																	// begin: function(){
+																	// 	alert('Переход по ссылке!');
+																	// }
 																})	
 															}
 														})
@@ -268,13 +289,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	})();
 	
+	//Head config
+	(function(){
+		let lead = document.querySelector('.lead');
+		function content (a,b){
+			a.innerHTML = b;
+		}
+		content(lead,CONFIG.lead_text);
+	})();
 	
 	//Appendix
 	(function Appendix () {
 		
-
-		const appendix = document.querySelector('#appendix'),
-			  logo = document.querySelector('#logo');
 
 		const likeCount = document.querySelector('#like_counter'),
 			  commentsCount = document.querySelector('#comments_counter');
@@ -299,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		      num_3 = document.querySelector("#num_3"),
 		      num_4 = document.querySelector("#num_4");
 
-
+			
 		//Like&love
 		(function random_like (){
 			let likeLoveImages = [
@@ -313,6 +339,22 @@ document.addEventListener("DOMContentLoaded", function() {
 			
 		})();
 		
+		//Gender
+		// (function gender(){
+			
+		// 	const avatar = document.getElementsByClassName('avatar');	
+		// 	console.log(avatar);
+		// 	avatar.forEach(function(a){
+		// 		console.log(a);
+		// 	});
+		// 	function male(){
+				
+		// 	};
+		// 	function female(){
+
+		// 	};
+		// 	let array = [male(),female()];
+		// })();
 
 		//Like&Comments_counter
 		function like_counter (min, max){
