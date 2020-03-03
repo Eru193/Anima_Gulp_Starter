@@ -221,7 +221,7 @@ h1.title {
 	}
 	.modal_p_1{
 		margin-top: -8px;
-		letter-spacing: normal;
+		// letter-spacing: normal;
 	}
 	.modal_button{
 		margin-top: 0;
@@ -229,6 +229,9 @@ h1.title {
 }
 #modal_1, #modal_2 {
 	right: 0.15%;
+}
+.modal_1_text_2,.modal_1_text_2_down,.modal_span{
+	color:  #333333;
 }
 .modal {
 	background: #FFFFFF;
@@ -244,7 +247,7 @@ h1.title {
 	line-height: 1.55;
 	position: absolute;
 	margin-bottom: $large;
-	letter-spacing: -0.5px;
+	// letter-spacing: -0.5px;
 	background-color: #FFFFFF;
 	.modal_icon{
 		height: 48px;
@@ -290,10 +293,11 @@ h1.title {
 		display: inline-block;
 		.expire-span{
 			display: inline-block;
+			color: #333333;
 		}
 		.expire{
 			display: inline-block;
-			width: 31px;
+			width: 32px;
 			padding-left: 10px;
 		}
 	}

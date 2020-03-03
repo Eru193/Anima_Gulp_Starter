@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		  modal_3_icon = document.querySelector('.modal_3_icon'),
 		  modal_2_icon = document.querySelector('.modal_2_icon'),
 		  sub_modal = document.querySelector('.back_modal_3'),
+		  modal_1_text = document.querySelector('.modal_1_text'),
+		  modal_2_text = document.querySelector('.modal_2_text'),
+		  modal_3_text = document.querySelector('.modal_3_text'),
 		  modal_1_title = document.querySelector('.modal_1_title'),
+		  modal_2_title = document.querySelector('.modal_2_title'),
 		  modal_3_title = document.querySelector('.modal_3_title'),
 		  modal_3_lead = document.querySelector('.modal_3_lead'),
 		  modal_1_lead = document.querySelector('.modal_1_lead'),  
@@ -17,7 +21,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//Config
 	const CONFIG = {
-		lead_text: 'Every Tuesday we select 7 lucky people to receive a $1,000 Bank of America Gift Card. Spin the wheel to claim your special prize.',
+		lead_text: "Every Tuesday we select 7 lucky people to receive a $1,000 Bank of America Gift Card. Spin the wheel to claim your special prize.",
+			//Modal
+				//Title
+		title_modal_1: "Congratulations!",
+		title_modal_2: "Try again!",
+		title_modal_3: "Congratulations!",
+				//Text	Modal 1														    \/-No delete        \/-No delete
+		text_modal_1: "YOU have been a selected by Bank of America for a shot at "+"<b>$1,000 Gift Card</b>"+" Simply spin the wheel to see if you're  today's winner!",
+		down_text_modal_1: 'Click "ok" to claim your special prize',
+		down_text_2_modal_1: "Good Luck!",
+		button_text_1: 'OK',
+				//Text	Modal 2
+		text_modal_2: "You have ONE extra spin!",
+		button_text_2: 'OK',
+				//Text	Modal 3
+		lead_text_1: "$1000 Bank of America Gift Card",
+		lead_text_2: "is reserved for you!",
+		text_modal_3: "To claim your prize, click the button bellow and verify your information on the next page.",
+		button_text_3: 'Claim Your Prize',
+		//Appendix
+				//Name
+		male_name_1: "Phil Graham",
+		male_name_2: "Mike Hines",
+		female_name_1: "Victoria Johnson",
+		female_name_2: "Sandra Moore",
+				//Text for comment
+		male_comment_1:	"I had never won anything, but today I was lucky! Thank you!",
+		male_comment_2: "Sweeeet! I've won an iPhone!! My gosh!",
+		female_comment_1: "Initially I was not sure if this is real or not, but I have received my gift card today, thank you!!",
+		female_comment_2: "At first I thought this was just a joke, but the gift card arrived by the mail this morning",
 	}
 	
 	//Visible 
@@ -32,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// off(modal_2_icon);
 	// off(modal_3_icon);
 	// off(sub_modal);
+	// off(modal_2_text);
 	// off(modal_1_title);
 	// off(modal_3_title);
 	// off(modal_1_lead);
@@ -287,13 +321,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	})();
 	
-	//Head config
+	//Head & modal config
 	(function(){
-		let lead = document.querySelector('.lead');
+		let lead = document.querySelector('.lead'),
+			modal_1_text_2 = document.querySelector('.modal_1_text_2'),
+			modal_1_text_2_down = document.querySelector('.modal_1_text_2_down'),
+			btnOneText = document.querySelector('.btn_span_modal_1'),
+			btnTwoText = document.querySelector('.btn_span_modal_2'),
+			btnThreeText = document.querySelector('.btn_span_modal_3'),
+			lead_text_1 = document.querySelector('.modal_span_1'),
+			lead_text_2 = document.querySelector('.modal_span_2');
+
 		function content (a,b){
 			a.innerHTML = b;
 		}
 		content(lead,CONFIG.lead_text);
+
+		content(modal_1_title,CONFIG.title_modal_1);
+		content(modal_2_title,CONFIG.title_modal_2);
+		content(modal_3_title,CONFIG.title_modal_3);
+		content(modal_1_text,CONFIG.text_modal_1);
+		content(modal_1_text_2,CONFIG.down_text_modal_1);
+		content(modal_1_text_2_down,CONFIG.down_text_2_modal_1);
+		content(btnOneText,CONFIG.button_text_1);
+		content(modal_2_text,CONFIG.text_modal_2);
+		content(btnTwoText,CONFIG.button_text_2);
+		content(lead_text_1,CONFIG.lead_text_1);
+		content(lead_text_2,CONFIG.lead_text_2);
+		content(modal_3_text,CONFIG.text_modal_3);
+		content(btnThreeText,CONFIG.button_text_3);
 	})();
 	
 	//Appendix
@@ -333,43 +389,42 @@ document.addEventListener("DOMContentLoaded", function() {
 			like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
 			like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
 			like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-			like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-			
+			like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];		
 		})();
 		
 		//Gender
 		let gender = function(){
-			const male = document.querySelectorAll('.male'),
-				  female = document.querySelectorAll('.female');
+		
+			const female_1 = document.querySelector('.female_1'),
+				  female_2 = document.querySelector('.female_2'),
+				  male_1 = document.querySelector('.male_1'),
+				  male_2 = document.querySelector('.male_2');
+
 			let faces = "url('../img/_src/Faces.png')";
 			let bg_x = [
 				'bg_x_0',
 				'bg_x_40',
 				'bg_x_80',
+				];
+			let bg_x_2 = [
 				'bg_x_120',
 				'bg_x_160',
 				'bg_x_200',
-				];
-			// function shuffleArray(array) {
-			// 	for (var i = array.length - 1; i > 0; i--) {
-			// 		var j = Math.floor(Math.random() * (i + 1));
-			// 		var temp = array[i];
-			// 		array[i] = array[j];
-			// 		array[j] = temp;
-			// 	}
-			// }	
-			// shuffleArray(bg_x);
-			
-			male.forEach((i) => {			
-				i.style.backgroundImage = faces;
-				i.style.backgroundPositionY = 'top';
-				i.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
-			})	
-			female.forEach((i) => {			
-				i.style.backgroundImage = faces;
-				i.style.backgroundPositionY = 'bottom';
-				i.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
-			})	
+				];	
+			function shuffle(a,b){
+				a.style.backgroundImage = faces;
+				a.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
+				b.style.backgroundImage = faces;
+				b.classList.add(bg_x_2[Math.floor(Math.random()*bg_x.length)]);
+			};
+			shuffle(female_1,female_2);
+			shuffle(male_1,male_2);
+			(function(){
+				female_1.style.backgroundPositionY = 'bottom';
+				female_2.style.backgroundPositionY = 'bottom';
+				male_1.style.backgroundPositionY = 'top';
+				male_2.style.backgroundPositionY = 'top';
+			})()
 		}
 		gender();
 
@@ -382,67 +437,47 @@ document.addEventListener("DOMContentLoaded", function() {
 		let comments_counter = Number(likeCount.textContent);
 		commentsCount.innerHTML = comments_counter*5;
 		
-
 		//Comments			
-		const content_1a = function (a){
-			a1.innerHTML = a;
-		},
-		      content_1p = function (a){
-			p1.innerHTML = a;
-		},
-		      content_2a = function (a){
-			a2.innerHTML = a;
-		},
-		      content_2p = function (a){
-			p2.innerHTML = a;
-		},
-		      content_3a = function (a){
-			a3.innerHTML = a;
-		},
-		      content_3p = function (a){
-			p3.innerHTML = a;
-		},
-		      content_4a = function (a){
-			a4.innerHTML = a;
-		},
-		      content_4p = function (a){
-			p4.innerHTML = a;
+		let text = (a,b) => {
+			a.innerHTML = b;
 		};
-
-		const Time_1 = function (a){
-			num_1.append(a);
-		},
-		      Time_2 = function (a){
-			num_2.append(a);
-		},
-		      Time_3 = function (a){
-			num_3.append(a);
-		},
-		      Time_4 = function (a){
-			num_4.append(a);
-		};   
-	
+		let time = (a,b) => {
+			a.append(b);
+		};
+		let time_variant_1 = [
+			'just now',
+			'10s',
+			'20s',
+			'25s',
+			'30s',
+		]
+		let time_variant_2 = [
+			'3m',
+			'4m',
+			'5m',
+			'6m',
+			'7m',
+		]
+		let time_variant_3 = [
+			'10m',
+			'11m',
+			'12m',
+			'13m',
+			'14m',
+		]
+		text(a1,CONFIG.female_name_1);
+		text(p1,CONFIG.female_comment_1);
+		text(a2,CONFIG.male_name_1);
+		text(p2,CONFIG.male_comment_1);
+		text(a3,CONFIG.male_name_2);
+		text(p3,CONFIG.male_comment_2);
+		text(a4,CONFIG.female_name_2);
+		text(p4,CONFIG.female_comment_2);
 		
-		//First block 
-		content_1a("Victoria Johnson");  // name
-		content_1p("I had never won anything, but today I was lucky! Thank you!"); //text
-		Time_1("just now"); //Comment_time
-
-		//Second block
-		content_2a("Phil Graham");
-		content_2p("At first I thought this was just a joke, but the gift card arrived by the mail this morning");
-		
-		Time_2("4m");
-
-		//Three block
-		content_3a("Mike Hines");
-		content_3p("Sweeeet! I've won an iPhone!! My gosh!");
-		Time_3("10m");
-
-		//Four block
-		content_4a("Sandra Moore");
-		content_4p("Initially I was not sure if this is real or not, but I have received my gift card today, thank you!!");
-		Time_4("1d");
+		time(num_1,(time_variant_1[Math.floor(Math.random()*time_variant_1.length)]));
+		time(num_2,(time_variant_2[Math.floor(Math.random()*time_variant_2.length)]));
+		time(num_3,(time_variant_3[Math.floor(Math.random()*time_variant_3.length)]));
+		time(num_4,"1d");
 
 		})();
 		
