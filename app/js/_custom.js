@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		title_modal_1: "Congratulations!",
 		title_modal_2: "Try again!",
 		title_modal_3: "Congratulations!",
-				//Text	Modal 1														    \/-No delete        \/-No delete
+				//Text	Modal 1														 \/-No delete        \/-No delete
 		text_modal_1: "YOU have been a selected by Bank of America for a shot at "+"<b>$1,000 Gift Card</b>"+" Simply spin the wheel to see if you're  today's winner!",
 		down_text_modal_1: 'Click "ok" to claim your special prize',
 		down_text_2_modal_1: "Good Luck!",
@@ -39,25 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		lead_text_1: "$1000 Bank of America Gift Card",
 		lead_text_2: "is reserved for you!",
 		text_modal_3: "To claim your prize, click the button bellow and verify your information on the next page.",
+		text_expire: 'Your prize will expire in',
 		button_text_3: 'Claim Your Prize',
-		//Appendix
-				//Name
-		male_name_1: "Phil Graham",
-		male_name_2: "Mike Hines",
-		female_name_1: "Victoria Johnson",
-		female_name_2: "Sandra Moore",
-				//Text for comment
-		male_comment_1:	"I had never won anything, but today I was lucky! Thank you!",
-		male_comment_2: "Sweeeet! I've won an iPhone!! My gosh!",
-		female_comment_1: "Initially I was not sure if this is real or not, but I have received my gift card today, thank you!!",
-		female_comment_2: "At first I thought this was just a joke, but the gift card arrived by the mail this morning",
 	}
-	
-	//Visible 
-	function off (a){
+	let off = (a) => {
 		a.style.display = 'none';
 	}
 
+	//Visible 
 	//....\/....Uncomment for off element
 	//off(appendix);
 	//off(logo);
@@ -117,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			direction: 'normal',
 			easing: API.disappears_easing,
 			autoplay: false,
-			complete: function(){
+			complete:() => {
 				anime({
 					targets: '.overlay',
 					delay: API.wheel_1_duration+300,
@@ -136,26 +125,26 @@ document.addEventListener("DOMContentLoaded", function() {
 			easing: API.disappears_easing,
 			translateY: 64,
 			opacity: 0,
-			complete: function(){
+			complete: () => {
 				anime({
 					targets: '.divisions',
 					duration: API.wheel_1_duration,
 					rotate: API.wheel_1_rotate,
 					direction: 'normal',
 					easing: API.wheel_1_easing,
-					complete: function(){
+					complete: () => {
 						anime({
 							targets: targets_image,
 							opacity: 0.3,
 							duration: 100,
 							direction: 'normal',
 							easing: API.disappears_easing,
-							complete: function(){
+							complete: () => {
 								anime({
 									targets: '#modal_2',
 									duration: 0,
 									translateY: -324,
-									complete: function(){
+									complete: () => {
 										anime({
 											targets: '#modal_2',
 											delay: 250,
@@ -164,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
 											direction: 'normal',
 											easing: API.appears_easing,
 											translateY: 0,
-											begin: function(){
+											begin: () => {
 												modal_2.style.display = 'flex';
 											},
 										})
@@ -192,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				direction: 'normal',
 				autoplay: false,
 				easing: API.disappears_easing,
-				begin: function(){
+				begin: () => {
 					anime({
 						targets: targets_image,
 						opacity: 1,
@@ -200,14 +189,14 @@ document.addEventListener("DOMContentLoaded", function() {
 						easing: API.appears_easing
 					})
 				},
-				complete: function(){
+				complete: () => {
 					anime({
 						targets: '.overlay',
 						delay: API.wheel_2_duration+300,
 						opacity: 1,
 						duration: API.modal_appears_duration,
 						easing: API.appears_easing,
-						complete: function(){
+						complete: () => {
 							anime({
 								targets: '.jump_card',
 								duration: 150,
@@ -228,16 +217,16 @@ document.addEventListener("DOMContentLoaded", function() {
 				easing: API.disappears_easing,
 				translateY: 64,
 				opacity: 0,
-				begin: function(){
+				begin: () => {
 					modal_2.style.display = 'none';
 				},
-				complete: function(){
+				complete: () => {
 					anime({
 						targets: '.divisions',
 						duration: API.wheel_2_duration,
 						rotate: API.wheel_2_rotate,
 						easing: API.wheel_2_easing,
-						complete: function(){
+						complete: () => {
 							let targets_image = [
 											'.watch_image',
 											'.headphones_image',
@@ -250,12 +239,12 @@ document.addEventListener("DOMContentLoaded", function() {
 									duration: 150,
 									opacity: 0.3,
 									easing: API.disappears_easing,
-									complete: function(){
+									complete: () => {
 										anime({
 											targets: '#modal_3',
 											duration: 0,
 											translateY: -324,
-											complete: function(){
+											complete: () => {
 												anime({
 													targets: '#modal_3',
 													delay: 250,
@@ -264,17 +253,17 @@ document.addEventListener("DOMContentLoaded", function() {
 													direction: 'normal',
 													easing: API.disappears_easing,
 													translateY: 0,
-														begin: function(){
+														begin: () => {
 															modal_3.style.display = 'flex';
 														},
 		
 														
-													complete: function(){
+													complete: () => {
 														anime({
 															targets:'.expire',
 															easing: 'lenear',
 															duration: API.timerDuration,
-															begin: function startExpire(){//Expire		
+															begin: () => {//Expire		
 																let countdown = new Date();
 																let responseTime = new Date(Date.now() + (1000*API.timerSeconds)); 
 		
@@ -286,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
 																	requestAnimationFrame(startTime);
 																})();
 																},
-															complete: function(){
+															complete: () => {
 																
 																	modal_3.style.display = 'none';
 																	
@@ -295,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function() {
 																	opacity: 0,
 																	duration: 100,
 																	delay: 500,
-																	// begin: function(){
+																	// begin:() => {
 																	// 	alert('Переход по ссылке!');
 																	// }
 																})	
@@ -330,9 +319,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			btnTwoText = document.querySelector('.btn_span_modal_2'),
 			btnThreeText = document.querySelector('.btn_span_modal_3'),
 			lead_text_1 = document.querySelector('.modal_span_1'),
-			lead_text_2 = document.querySelector('.modal_span_2');
+			lead_text_2 = document.querySelector('.modal_span_2'),
+			spanExpire = document.querySelector('.expire_span');
 
-		function content (a,b){
+		let content = (a,b) => {
 			a.innerHTML = b;
 		}
 		content(lead,CONFIG.lead_text);
@@ -350,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		content(lead_text_2,CONFIG.lead_text_2);
 		content(modal_3_text,CONFIG.text_modal_3);
 		content(btnThreeText,CONFIG.button_text_3);
+		content(spanExpire,CONFIG.text_expire);
 	})();
 	
 	//Appendix
@@ -360,9 +351,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			  commentsCount = document.querySelector('#comments_counter');
 
 		const like_1 = document.querySelector('.like_image_1'),
-					like_2 = document.querySelector('.like_image_2'),
-					like_3 = document.querySelector('.like_image_3'),
-					like_4 = document.querySelector('.like_image_4');
+			  like_2 = document.querySelector('.like_image_2'),
+			  like_3 = document.querySelector('.like_image_3'),
+			  like_4 = document.querySelector('.like_image_4');
 		
 
 		const a1 = document.querySelector("#a1"),
@@ -380,20 +371,20 @@ document.addEventListener("DOMContentLoaded", function() {
 		      num_4 = document.querySelector("#num_4");
 
 			
-		//Like&love
-		(function random_like (){
-			let likeLoveImages = [
-				'../img/_src/Love.png',
-				'../img/_src/Like.png'
-			]
-			like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-			like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-			like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-			like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];		
-		})();
+		// Like&love
+		// (function random_like (){
+		// 	let likeLoveImages = [
+		// 		'../img/_src/Love.png',
+		// 		'../img/_src/Like.png'
+		// 	]
+		// 	like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+		// 	like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+		// 	like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
+		// 	like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];		
+		// })();
 		
 		//Gender
-		let gender = function(){
+		(function gender (){
 		
 			const female_1 = document.querySelector('.female_1'),
 				  female_2 = document.querySelector('.female_2'),
@@ -411,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				'bg_x_160',
 				'bg_x_200',
 				];	
-			function shuffle(a,b){
+			let shuffle = (a,b) => {
 				a.style.backgroundImage = faces;
 				a.classList.add(bg_x[Math.floor(Math.random()*bg_x.length)]);
 				b.style.backgroundImage = faces;
@@ -425,11 +416,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				male_1.style.backgroundPositionY = 'top';
 				male_2.style.backgroundPositionY = 'top';
 			})()
-		}
-		gender();
+		})();
 
 		//Like&Comments_counter
-		function like_counter (min, max){
+		let like_counter = (min, max) => {
 			let random = min + Math.random() * (max - min);
 			return Math.floor(random);
 		}
@@ -465,14 +455,38 @@ document.addEventListener("DOMContentLoaded", function() {
 			'13m',
 			'14m',
 		]
-		text(a1,CONFIG.female_name_1);
-		text(p1,CONFIG.female_comment_1);
-		text(a2,CONFIG.male_name_1);
-		text(p2,CONFIG.male_comment_1);
-		text(a3,CONFIG.male_name_2);
-		text(p3,CONFIG.male_comment_2);
-		text(a4,CONFIG.female_name_2);
-		text(p4,CONFIG.female_comment_2);
+		let male_name_1 = [
+			"Phil Graham",
+		]
+		let male_name_2 = [
+			"Mike Hines",
+		]
+		let female_name_1 = [
+			"Victoria Johnson",
+		]
+		let female_name_2 = [
+			"Sandra Moore",
+		]
+		let male_comments_1 = [
+			"I had never won anything, but today I was lucky! Thank you!",
+		]
+		let male_comments_2 = [
+			"Sweeeet! I've won an iPhone!! My gosh!",
+		]
+		let female_comments_1 = [
+			"Initially I was not sure if this is real or not, but I have received my gift card today, thank you!!",
+		]
+		let female_comments_2 = [
+			"At first I thought this was just a joke, but the gift card arrived by the mail this morning",
+		]
+		text(a1,(female_name_1[Math.floor(Math.random()*female_name_1.length)]));
+		text(p1,(female_comments_1[Math.floor(Math.random()*female_comments_1.length)]));
+		text(a2,(male_name_1[Math.floor(Math.random()*male_name_1.length)]));
+		text(p2,(male_comments_1[Math.floor(Math.random()*male_comments_1.length)]));
+		text(a3,(male_name_2[Math.floor(Math.random()*male_name_2.length)]));
+		text(p3,(male_comments_2[Math.floor(Math.random()*male_comments_2.length)]));
+		text(a4,(female_name_2[Math.floor(Math.random()*female_name_2.length)]));
+		text(p4,(female_comments_2[Math.floor(Math.random()*female_comments_2.length)]));
 		
 		time(num_1,(time_variant_1[Math.floor(Math.random()*time_variant_1.length)]));
 		time(num_2,(time_variant_2[Math.floor(Math.random()*time_variant_2.length)]));

@@ -291,7 +291,7 @@ h1.title {
 	.modal_expire{
 		margin-top: $normal;
 		display: inline-block;
-		.expire-span{
+		.expire_span{
 			display: inline-block;
 			color: #333333;
 		}
@@ -339,6 +339,9 @@ p {
 }
 .comments_count{
 	padding-right: 8px;
+}
+.like_love {
+	display: inline-block;
 }
 .avatar{
 	height: 40px;
