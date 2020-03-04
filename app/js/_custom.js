@@ -371,17 +371,31 @@ document.addEventListener("DOMContentLoaded", function() {
 		      num_4 = document.querySelector("#num_4");
 
 			
-		// Like&love
-		// (function random_like (){
-		// 	let likeLoveImages = [
-		// 		'../img/_src/Love.png',
-		// 		'../img/_src/Like.png'
-		// 	]
-		// 	like_1.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_2.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_3.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];
-		// 	like_4.src = likeLoveImages[Math.floor(Math.random()*likeLoveImages.length)];		
-		// })();
+		//Like&love
+		(function random_like (){
+			let likeImages = document.querySelectorAll('.like_image_1');
+			let likeImages_2 = document.querySelectorAll('.like_image_2');
+			let like = document.querySelectorAll('.like');
+			let like_2 = document.querySelectorAll('.like_2');
+			let likeFoo = () => {
+				likeImages.forEach((i) => {
+					i.src = '../img/_src/Like.png';
+				});
+				like.forEach((i) => {
+					i.innerHTML = 'Like';
+				});
+			};
+			let loveFoo = () => {
+				likeImages_2.forEach((i) => {
+					i.src = '../img/_src/Love.png';
+				});
+				like_2.forEach((i) => {
+					i.innerHTML = 'Love';
+				});
+			};
+			loveFoo();
+			likeFoo();
+		})();
 		
 		//Gender
 		(function gender (){
