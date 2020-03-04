@@ -64,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// off(modal_3_lead);
 	// off(modal_expire);
 	// off(card_img);
-
-			
+		
 	
 	(function wheel (){
 		
