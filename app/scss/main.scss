@@ -14,6 +14,7 @@ body {
 	position: relative;
 	line-height: 1.65;
 	font-family: $font;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	padding: 16px 16px 0 16px;
 	margin: 0 auto;
@@ -65,17 +66,17 @@ h1.title {
 .wheel {
 	height: 328px;
 	width: 328px;
+	overflow: hidden;
 	background-image: url(../img/_src/Back_2.svg);
 }
 .divisions{
 	height: 328px;
 	width: 328px;
-	background-image: url(../img/_src/Divisions_2.svg);
+	overflow: hidden;
+	background-image: url(../img/_src/divisions_2.svg);
 }
 .point {
 	background-repeat: no-repeat;
-	border-radius: 50%;
-	background-size: 85%;
 	background-position: center;
 }
 .point_wrapper {
@@ -106,7 +107,7 @@ h1.title {
 	transform: rotate(293deg);
 }
 .card_watch_line {
-	transform: rotate(22.4deg);
+	transform: rotate(23deg);
 }
 .repeat_image {
 	background-image: url(../img/_src/Rotate.svg);
@@ -125,7 +126,8 @@ h1.title {
 }
 .card_image{
 	background-image: url(../img/_src/Card.png);
-	transform: rotate(90deg);
+	transform: rotate(89deg);
+	margin-bottom: 2.5px;
 }
 .watch_image{
 	background-image: url(../img/_src/Watch.png);
@@ -149,7 +151,6 @@ h1.title {
 	background-image: url(../img/_src/Center_2.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 80%;
 	position: absolute;
 	z-index: 100;
 }
@@ -171,7 +172,7 @@ h1.title {
 	height: 100%;
 	top: 0;
 	z-index: 150;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.7);
 	left: 0;
 }
 
@@ -353,7 +354,7 @@ p {
 	background-image: url(../img/_src/Faces.png);
 	background-repeat: no-repeat;
 	border-radius: 50%;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .bg_x-0{
 	background-position-x: left;

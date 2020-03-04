@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	// off(modal_3_lead);
 	// off(modal_expire);
 	// off(card_img);
-					
+
+			
 	
 	(function wheel (){
 		
@@ -73,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			appears_easing:	'easeInSine',	
 			disappears_easing: 'easeOutSine',	
 			//Modal
-			modal_appears_duration: 150,
+			modal_appears_duration: 100,
 			modal_disappears_duration: 150,
-			modal_3_in_delay: 500,
+			modal_in_delay: 1000,
 			//Setting timer duration && timer seconds for change timer
 			timerSeconds: 10,
 			timerDuration: 10000,
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			complete:() => {
 				anime({
 					targets: '.overlay',
-					delay: API.wheel_1_duration+300,
+					delay: API.wheel_1_duration+API.modal_in_delay,
 					opacity: 1,
 					duration: API.modal_appears_duration,
 					easing: API.appears_easing,
@@ -151,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 									complete: () => {
 										anime({
 											targets: '#modal_2',
-											delay: 250,
+											delay: API.modal_in_delay,
 											opacity: 1,
 											duration: API.modal_appears_duration,
 											direction: 'normal',
@@ -196,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				complete: () => {
 					anime({
 						targets: '.overlay',
-						delay: API.wheel_2_duration+300,
+						delay:API.modal_in_delay+API.wheel_2_duration,
 						opacity: 1,
 						duration: API.modal_appears_duration,
 						easing: API.appears_easing,
@@ -222,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				translateY: 64,
 				opacity: 0,
 				begin: () => {
-					modal_2.style.display = 'none';
+					modal_2.style.display = 'none';				
 				},
 				complete: () => {
 					anime({
@@ -251,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 											complete: () => {
 												anime({
 													targets: '#modal_3',
-													delay: API.modal_3_in_delay,
+													delay: API.modal_in_delay,
 													opacity: 1,
 													duration: API.modal_appears_duration,
 													direction: 'normal',
@@ -259,9 +260,7 @@ document.addEventListener("DOMContentLoaded", function() {
 													translateY: 0,
 														begin: () => {
 															modal_3.style.display = 'flex';
-														},
-		
-														
+														},																
 													complete: () => {
 														anime({
 															targets:'.expire',
@@ -279,18 +278,17 @@ document.addEventListener("DOMContentLoaded", function() {
 																	requestAnimationFrame(startTime);
 																})();
 																},
-															complete: () => {
-																
-																	modal_3.style.display = 'none';
-																	
+															complete: () => {																
+																	modal_3.style.display = 'none';																
 																anime({
 																	targets:'.overlay',
 																	opacity: 0,
 																	duration: 100,
 																	delay: 500,
-																	// begin:() => {
-																	// 	alert('Переход по ссылке!');
-																	// }
+																	begin:() => {
+																		// document.body.style.overflowY = 'scroll';
+																		// alert('Переход по ссылке!');
+																	}
 																})	
 															}
 														})

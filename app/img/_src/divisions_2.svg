@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="328" height="328" viewBox="0 0 328 328">
+  <defs>
+    <linearGradient id="divisions_3-a" x1="75%" x2="25%" y1="27.868%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EBF2F9"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-b" x1="100%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF2F9"/>
+      <stop offset="100%" stop-color="#C8D9EB"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-c" x1="100%" x2="0%" y1="100%" y2="100%">
+      <stop offset="0%" stop-color="#EBF2F9"/>
+      <stop offset="100%" stop-color="#C8D9EB"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-d" x1="71.303%" x2="0%" y1="75%" y2="25%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EBF2F9"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-e" x1="0%" x2="0%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#EBF2F9"/>
+      <stop offset="100%" stop-color="#C8D9EB"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-f" x1="25%" x2="75%" y1="69.247%" y2="0%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EBF2F9"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-g" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#EBF2F9"/>
+      <stop offset="100%" stop-color="#C8D9EB"/>
+    </linearGradient>
+    <linearGradient id="divisions_3-h" x1="29.325%" x2="100%" y1="25%" y2="75%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#EBF2F9"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#EBF2F9" fill-rule="nonzero" d="M166.394227,14.1065664 L163.903578,14.0863883 L163.903578,164.698819 L270.402703,58.199879 C243.692295,31.4894712 206.996058,14.7648629 166.394227,14.1065664 Z"/>
+    <path fill="url(#divisions_3-a)" fill-rule="nonzero" d="M166.394227,14.1065664 L163.903578,14.0863883 L163.903578,164.698819 L270.402703,58.199879 C243.692295,31.4894712 206.996058,14.7648629 166.394227,14.1065664 Z"/>
+    <path fill="#C8D9EB" fill-rule="nonzero" d="M59.4138092,56.3559192 L57.6383866,58.1028061 L164.137588,164.601746 L164.137588,13.9895009 C126.363367,13.9895009 88.589126,28.111575 59.4138092,56.3559192 Z"/>
+    <path fill="url(#divisions_3-b)" fill-rule="nonzero" d="M59.4138092,56.3559192 L57.6383866,58.1028061 L164.137588,164.601746 L164.137588,13.9895009 C126.363367,13.9895009 88.589126,28.111575 59.4138092,56.3559192 Z"/>
+    <path fill="#C8D9EB" fill-rule="nonzero" d="M271.915297,59.878003 L270.16841,58.102581 L163.669471,164.601783 L314.281715,164.601783 C314.281715,126.827561 300.159641,89.05332 271.915297,59.878003 Z"/>
+    <path fill="url(#divisions_3-c)" fill-rule="nonzero" d="M271.915297,59.878003 L270.16841,58.102581 L163.669471,164.601783 L314.281715,164.601783 C314.281715,126.827561 300.159641,89.05332 271.915297,59.878003 Z"/>
+    <path fill="#EBF2F9" fill-rule="nonzero" d="M314.166098,166.859226 L314.186276,164.368576 L163.573845,164.368576 L270.072785,270.867701 C296.783193,244.157293 313.507801,207.461056 314.166098,166.859226 Z"/>
+    <path fill="url(#divisions_3-d)" fill-rule="nonzero" d="M314.166098,166.859226 L314.186276,164.368576 L163.573845,164.368576 L270.072785,270.867701 C296.783193,244.157293 313.507801,207.461056 314.166098,166.859226 Z"/>
+    <path fill="#C8D9EB" fill-rule="nonzero" d="M268.39278,272.381103 L270.168203,270.634216 L163.669001,164.135276 L163.669001,314.747521 C201.443223,314.747521 239.217464,300.625447 268.39278,272.381103 Z"/>
+    <path fill="url(#divisions_3-e)" fill-rule="nonzero" d="M268.39278,272.381103 L270.168203,270.634216 L163.669001,164.135276 L163.669001,314.747521 C201.443223,314.747521 239.217464,300.625447 268.39278,272.381103 Z"/>
+    <path fill="#EBF2F9" fill-rule="nonzero" d="M161.412818,314.629392 L163.903467,314.64957 L163.903467,164.03714 L57.4043419,270.53608 C84.1147497,297.246488 120.810987,313.971095 161.412818,314.629392 Z"/>
+    <path fill="url(#divisions_3-f)" fill-rule="nonzero" d="M161.412818,314.629392 L163.903467,314.64957 L163.903467,164.03714 L57.4043419,270.53608 C84.1147497,297.246488 120.810987,313.971095 161.412818,314.629392 Z"/>
+    <path fill="#C8D9EB" fill-rule="nonzero" d="M55.891113,268.857974 L57.638,270.633397 L164.13694,164.134195 L13.524695,164.134195 C13.524695,201.908417 27.646769,239.682658 55.891113,268.857974 Z"/>
+    <path fill="url(#divisions_3-g)" fill-rule="nonzero" d="M55.891113,268.857974 L57.638,270.633397 L164.13694,164.134195 L13.524695,164.134195 C13.524695,201.908417 27.646769,239.682658 55.891113,268.857974 Z"/>
+    <path fill="#EBF2F9" fill-rule="nonzero" d="M13.6418573,161.877816 L13.6216797,164.368465 L164.234109,164.368465 L57.73517,57.8693401 C31.0247622,84.5797479 14.3001543,121.275985 13.6418573,161.877816 Z"/>
+    <path fill="url(#divisions_3-h)" fill-rule="nonzero" d="M13.6418573,161.877816 L13.6216797,164.368465 L164.234109,164.368465 L57.73517,57.8693401 C31.0247622,84.5797479 14.3001543,121.275985 13.6418573,161.877816 Z"/>
+  </g>
+</svg>
