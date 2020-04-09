@@ -22,7 +22,7 @@ function bsReload(done) { browserSync.reload(); done() };
 
 // Custom Styles
 gulp.task('styles', function() {
-	return gulp.src('app/src/scss/**/*.scss')
+	return gulp.src('app/src_scss/**/*.scss')
 	.pipe(sass({
 		outputStyle: 'expanded',
 		includePaths: [__dirname + '/node_modules']
@@ -42,10 +42,11 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		// 'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
 		// 'app/js/_libs.js', // JS libraries (all in one)
-		'app/src/js/_custom.js', // Custom scripts. Always at the end
+		'node_modules/animejs/lib/anime.min.js',
+		'app/src_js/_custom.js', // Custom scripts. Always at the end
 		])
-	.pipe(concat('scripts.js'))
-	// .pipe(uglify()) // Minify js (opt.)
+	.pipe(concat('scripts.min.js'))
+	.pipe(uglify()) // Minify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -74,8 +75,8 @@ gulp.task('rsync', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/src/scss/**/*.scss', gulp.parallel('styles'));
-	gulp.watch(['app/src/js/_custom.js'], gulp.parallel('scripts'));
+	gulp.watch('app/src_scss/**/*.scss', gulp.parallel('styles'));
+	gulp.watch(['app/src_js/_custom.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
